@@ -4,6 +4,9 @@ module dev.alejandroaitorjesusdiego.proyectoprogramacion3 {
     requires kotlin.stdlib;
     requires logging.jvm;
     requires org.jdbi.v3.core;
+    requires org.jdbi.v3.kotlin;
+    requires org.jdbi.v3.sqlobject;
+    requires koin.annotations.jvm;
 
 
     opens dev.alejandroaitorjesusdiego.proyectoprogramacion3 to javafx.fxml;
