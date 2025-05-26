@@ -6,8 +6,11 @@ module dev.alejandroaitorjesusdiego.proyectoprogramacion3 {
     requires org.jdbi.v3.kotlin;
     requires org.jdbi.v3.sqlobject;
     requires koin.annotations.jvm;
-    requires kotlinx.serialization.core;
     requires net.devrieze.xmlutil.serialization;
+    requires com.github.benmanes.caffeine;
+    requires koin.core.jvm;
+    requires kotlin.result.jvm;
+    requires kotlinx.serialization.json;
 
 
     opens dev.alejandroaitorjesusdiego.proyectoprogramacion3 to javafx.fxml;
