@@ -54,13 +54,13 @@ class JdbiManager(val isForTes: String = false) {
 
     @Singleton
     fun provideDataBaseManager(
-        @Property("database.url") urlForTest: String = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1",
+        @Property("database.url") urlForTest,
         @Property("database.init.data") databaseInitData: String = "false",
         @Property("database.init.tables") databaseInitTables: String = "false"
     ):Jdbi{
         log.debug { "Instanciando JdbiManager" }
         return JdbiManager(
-            databaseUrl,
+            urlForTest,
 
 
         ).jdbi
