@@ -1,9 +1,12 @@
 package dev.alejandroaitorjesusdiego.proyectoprogramacion3
 
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.database.JdbiManager
 import javafx.application.Application
 import javafx.fxml.FXMLLoader
 import javafx.scene.Scene
 import javafx.stage.Stage
+import org.koin.core.context.startKoin
+import org.koin.fileProperties
 
 class HelloApplication : Application() {
     override fun start(stage: Stage) {
@@ -16,5 +19,4 @@ class HelloApplication : Application() {
 }
 
 fun main() {
-    Application.launch(HelloApplication::class.java)
 }
