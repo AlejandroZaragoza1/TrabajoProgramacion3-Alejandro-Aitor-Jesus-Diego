@@ -57,10 +57,10 @@ class EquipoStorageBIN: EquipoStorage {
 
                     val integranteJugador = IntegranteDTO(
                         id, nombre, apellidos, fecha_nacimiento,
-                        fecha_incorporacion, salario, pais, rol,
+                        fecha_incorporacion, salario, pais, tipo = "Ninguno",  rol,
                         especialidad = null, posicion, dorsal,
                         altura, peso, goles, partidos_jugados,
-                        minutos_jugados, imagen, tipo
+                        minutos_jugados, imagen
                     )
                     equipo.add(integranteJugador)
                 }
@@ -70,10 +70,10 @@ class EquipoStorageBIN: EquipoStorage {
 
                     val integranteEntrenador = IntegranteDTO(
                         id, nombre, apellidos, fecha_nacimiento,
-                        fecha_incorporacion, salario, pais, rol,
+                        fecha_incorporacion, salario, pais, tipo = "Niniguno", rol,
                         especialidad, posicion = null, dorsal = null,
                         altura = null, peso = null, goles = null,
-                        partidos_jugados = null, minutos_jugados = null, imagen,
+                        partidos_jugados = null, minutos_jugados = null, imagen
                     )
                     equipo.add(integranteEntrenador)
                 }

@@ -14,6 +14,7 @@ import org.example.newteam.gestion.models.Integrante
 import org.example.newteam.gestion.models.Jugador
 import org.lighthousegames.logging.logging
 import java.io.File
+
 /**
  * Almacenamiento que Implementa la interfaz [EquipoStorage] para
  * manejar el trato con archivos JSON para poder leer de un archivo
