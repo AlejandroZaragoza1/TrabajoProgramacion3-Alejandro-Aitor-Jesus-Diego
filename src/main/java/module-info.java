@@ -7,6 +7,7 @@ module dev.alejandroaitorjesusdiego.proyectoprogramacion3 {
     requires org.jdbi.v3.kotlin;
     requires org.jdbi.v3.sqlobject;
     requires koin.annotations.jvm;
+    requires org.jdbi.v3.sqlobject.kotlin;
 
 
     opens dev.alejandroaitorjesusdiego.proyectoprogramacion3 to javafx.fxml;

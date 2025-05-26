@@ -1,22 +1,28 @@
 package dev.alejandroaitorjesusdiego.proyectoprogramacion3.database
 
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.configuration.Configuration
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.core.kotlin.KotlinPlugin
 import org.jdbi.v3.sqlobject.SqlObjectPlugin
 import org.koin.core.annotation.Property
 import org.koin.core.annotation.Singleton
 import org.lighthousegames.logging.logging
+
 import java.io.File
 
 @Singleton
-class JdbiManager(
-    private val databaseUrl: String,
-    private val databaseInitData:Boolean,
-    private val databaseInitTables:Boolean
-) {
+class JdbiManager(val isForTes: String = false) {
     private val log = logging()
 
+    val databaseUrl = Configuration.configurationProperties.databaseUrl
+    val databaseInitTables = Configuration.configurationProperties.databaseInitTables
+    val urlForTest = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"
+    val urlFinal = if(isForTes) urlForTest else databaseUrl
+
+
     val jdbi by lazy { Jdbi.create(databaseUrl) }
+
+
     init {
         log.debug { "Inicializar Jdbi" }
         jdbi.installPlugin(KotlinPlugin())
@@ -25,10 +31,6 @@ class JdbiManager(
         if (databaseInitTables){
             log.debug { "creando tablas" }
             executeSqlScriptFromResources("tabla.Sql")
-        }
-        if (databaseInitData){
-            log.debug { "Cargando datos" }
-            executeSqlScriptFromResources("data.Sql")
         }
 
     }
@@ -52,15 +54,15 @@ class JdbiManager(
 
     @Singleton
     fun provideDataBaseManager(
-        @Property("database.url") databaseUrl: String = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1",
+        @Property("database.url") urlForTest: String = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1",
         @Property("database.init.data") databaseInitData: String = "false",
         @Property("database.init.tables") databaseInitTables: String = "false"
     ):Jdbi{
         log.debug { "Instanciando JdbiManager" }
         return JdbiManager(
             databaseUrl,
-            databaseInitData.toBoolean(),
-            databaseInitTables.toBoolean()
+
+
         ).jdbi
     }
 
