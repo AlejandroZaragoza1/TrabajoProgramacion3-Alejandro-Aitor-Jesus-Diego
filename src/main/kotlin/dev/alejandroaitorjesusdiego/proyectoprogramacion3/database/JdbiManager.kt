@@ -11,13 +11,12 @@ import org.lighthousegames.logging.logging
 import java.io.File
 
 @Singleton
-class JdbiManager(val isForTes: String = false) {
+class JdbiManager(val isForTes: Boolean = false) {
     private val log = logging()
 
     val databaseUrl = Configuration.configurationProperties.databaseUrl
     val databaseInitTables = Configuration.configurationProperties.databaseInitTables
-    val urlForTest = "jdbc:h2:mem:test;DB_CLOSE_DELAY=-1"
-    val urlFinal = if(isForTes) urlForTest else databaseUrl
+
 
 
     val jdbi by lazy { Jdbi.create(databaseUrl) }
@@ -54,13 +53,12 @@ class JdbiManager(val isForTes: String = false) {
 
     @Singleton
     fun provideDataBaseManager(
-        @Property("database.url") urlForTest,
         @Property("database.init.data") databaseInitData: String = "false",
         @Property("database.init.tables") databaseInitTables: String = "false"
     ):Jdbi{
         log.debug { "Instanciando JdbiManager" }
         return JdbiManager(
-            urlForTest,
+
 
 
         ).jdbi
