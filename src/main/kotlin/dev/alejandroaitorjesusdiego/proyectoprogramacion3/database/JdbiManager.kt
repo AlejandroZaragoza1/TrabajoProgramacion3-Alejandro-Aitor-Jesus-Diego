@@ -4,22 +4,19 @@ import dev.alejandroaitorjesusdiego.proyectoprogramacion3.configuration.Configur
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.core.kotlin.KotlinPlugin
 import org.jdbi.v3.sqlobject.SqlObjectPlugin
-import org.koin.core.annotation.Property
-import org.koin.core.annotation.Singleton
+
 import org.lighthousegames.logging.logging
 
 import java.io.File
 
-@Singleton
-class JdbiManager(val isForTes: Boolean = false) {
+
+class JdbiManager(databaseUrl: String, databaseInitTables: String) {
     private val log = logging()
 
-    val databaseUrl = Configuration.configurationProperties.databaseUrl
-    val databaseInitTables = Configuration.configurationProperties.databaseInitTables
+    val urlNormal = Configuration.configurationProperties.databaseUrl
+    val InitTables = Configuration.configurationProperties.databaseInitTables
 
-
-
-    val jdbi by lazy { Jdbi.create(databaseUrl) }
+    val jdbi by lazy { Jdbi.create(urlNormal) }
 
 
     init {
@@ -27,7 +24,7 @@ class JdbiManager(val isForTes: Boolean = false) {
         jdbi.installPlugin(KotlinPlugin())
         jdbi.installPlugin(SqlObjectPlugin())
 
-        if (databaseInitTables){
+        if (InitTables){
             log.debug { "creando tablas" }
             executeSqlScriptFromResources("tabla.Sql")
         }
@@ -51,14 +48,12 @@ class JdbiManager(val isForTes: Boolean = false) {
         }
     }
 
-    @Singleton
-    fun provideDataBaseManager(
-        @Property("database.init.data") databaseInitData: String = "false",
-        @Property("database.init.tables") databaseInitTables: String = "false"
-    ):Jdbi{
+
+    fun provideDataBaseManager(config: Configuration):Jdbi{
         log.debug { "Instanciando JdbiManager" }
         return JdbiManager(
-
+        urlNormal,
+            InitTables.toString()
 
 
         ).jdbi
