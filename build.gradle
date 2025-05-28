@@ -6,6 +6,8 @@ plugins {
   id 'org.openjfx.javafxplugin' version '0.0.13'
   id 'org.beryx.jlink' version '2.25.0'
   id("com.google.devtools.ksp") version "1.9.23-1.0.19"
+  id("org.jetbrains.kotlin.plugin.serialization") version "1.9.23"
+
 }
 
 group 'dev.AlejandroAitorJesusDiego'
@@ -89,6 +91,8 @@ dependencies {
 
   //BCrypt
   implementation("org.mindrot:jbcrypt:0.4")
+
+  implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.0")
 }
 
 test {
