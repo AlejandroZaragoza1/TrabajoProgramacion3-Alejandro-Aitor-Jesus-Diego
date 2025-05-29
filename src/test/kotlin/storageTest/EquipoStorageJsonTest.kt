@@ -1,11 +1,11 @@
 package storageTest
 
-import dev.alejandroaitorjesusdiego.proyectoprogramacion3.models.Tipo
-import org.example.newteam.gestion.models.Entrenador
-import org.example.newteam.gestion.models.Especialidad
-import org.example.newteam.gestion.models.Jugador
-import org.example.newteam.gestion.models.Posicion
-import org.example.newteam.gestion.storage.EquipoStorageJSON
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Tipo
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Entrenador
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Especialidad
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Jugador
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Posicion
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.storage.EquipoStorageJSON
 import org.junit.jupiter.api.Nested
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.assertAll

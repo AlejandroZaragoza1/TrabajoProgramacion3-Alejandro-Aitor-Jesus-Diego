@@ -1,4 +1,4 @@
-package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.database
 
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.configuration.Configuration
 import org.jdbi.v3.core.Jdbi
@@ -57,6 +57,10 @@ class JdbiManager(databaseUrl: String, databaseInitTables: String) {
 
 
         ).jdbi
+    }
+
+    companion object {
+        val instance: Jdbi = TODO()
     }
 
 }

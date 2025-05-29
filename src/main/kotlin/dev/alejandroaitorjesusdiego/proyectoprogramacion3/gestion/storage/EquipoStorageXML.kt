@@ -8,7 +8,7 @@ import kotlinx.serialization.encodeToString
 import nl.adaptivity.xmlutil.serialization.XML
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dto.EquipoDTO
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dto.IntegranteXmlDTO
-import dev.alejandroaitorjesusdiego.proyectoprogramacion3gestion.errors.GestionErrors
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.errors.GestionErrors
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toModel
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toXmlDTO
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Entrenador

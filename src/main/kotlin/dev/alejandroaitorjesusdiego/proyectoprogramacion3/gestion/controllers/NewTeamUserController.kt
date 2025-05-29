@@ -12,10 +12,10 @@ import javafx.scene.image.Image
 import javafx.scene.image.ImageView
 import javafx.stage.FileChooser
 import javafx.stage.Stage
-import org.example.newteam.gestion.di.Dependencies
-import org.example.newteam.gestion.errors.GestionErrors
-import org.example.newteam.gestion.mapper.toEntrenadorModel
-import org.example.newteam.gestion.mapper.toJugadorModel
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.di.Dependencies
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.errors.GestionErrors
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toEntrenadorModel
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toJugadorModel
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Entrenador
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Especialidad
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Integrante

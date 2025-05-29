@@ -13,7 +13,7 @@ import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.extensions.red
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toEntrenadorModel
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toJugadorModel
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Entrenador
-import org.example.newteam.gestion.models.Especialidad
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Especialidad
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Integrante
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Jugador
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.service.EquipoServiceImpl

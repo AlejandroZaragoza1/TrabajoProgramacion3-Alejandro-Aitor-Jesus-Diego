@@ -8,8 +8,8 @@ import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toModel
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Entrenador
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Integrante
 import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Jugador
-import org.example.newteam.gestion.validator.IntegranteValidator
-import dev.alejandroaitorjesusdiego.proyectoprogramacion3.repositories.EquipoRepository
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.validator.IntegranteValidator
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.repositories.EquipoRepository
 import org.lighthousegames.logging.logging
 import java.time.LocalDateTime
 

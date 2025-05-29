@@ -33,7 +33,8 @@ fun IntegranteEntity.toModel(): Integrante {
             createdAt = createdAt,
             updatedAt = updatedAt,
             imagen = imagen,
-            minutos_jugados = minutos_jugados!!
+            minutos_jugados = minutos_jugados!!,
+            tipo = TODO()
         )
     }
     else{
@@ -48,7 +49,8 @@ fun IntegranteEntity.toModel(): Integrante {
             especialidad = Especialidad.valueOf(especialidad!!),
             createdAt = createdAt,
             updatedAt = updatedAt,
-            imagen = imagen
+            imagen = imagen,
+            tipo = TODO()
         )
     }
 }
@@ -126,7 +128,10 @@ fun IntegranteDTO.toModel(): Integrante {
             goles = goles!!,
             partidos_jugados = partidos_jugados!!,
             imagen = imagen,
-            minutos_jugados = minutos_jugados!!
+            minutos_jugados = minutos_jugados!!,
+            createdAt = TODO(),
+            updatedAt = TODO(),
+            tipo = TODO()
         )
     }
     else{
@@ -139,7 +144,10 @@ fun IntegranteDTO.toModel(): Integrante {
             salario = salario,
             pais = pais,
             especialidad = Especialidad.valueOf(especialidad!!),
-            imagen = imagen
+            imagen = imagen,
+            createdAt = TODO(),
+            updatedAt = TODO(),
+            tipo = TODO()
         )
     }
 }
@@ -165,6 +173,9 @@ fun IntegranteXmlDTO.toModel(): Integrante {
             partidos_jugados = partidos_jugados!!.toInt(),
             imagen = imagen,
             minutos_jugados = minutos_jugados!!.toInt(),
+            createdAt = TODO(),
+            updatedAt = TODO(),
+            tipo = TODO(),
         )
     }
     else{
@@ -177,7 +188,10 @@ fun IntegranteXmlDTO.toModel(): Integrante {
             salario = salario,
             pais = pais,
             especialidad = Especialidad.valueOf(especialidad!!),
-            imagen = imagen
+            imagen = imagen,
+            createdAt = TODO(),
+            updatedAt = TODO(),
+            tipo = TODO()
         )
     }
 }
@@ -204,7 +218,8 @@ fun Entrenador.toXmlDTO (): IntegranteXmlDTO {
         goles = "",
         partidos_jugados = "",
         minutos_jugados = "",
-        imagen = imagen
+        imagen = imagen,
+        tipo = TODO()
     )
 }
 /**
@@ -229,7 +244,8 @@ fun Jugador.toXmlDTO (): IntegranteXmlDTO {
         goles = goles.toString(),
         partidos_jugados = partidos_jugados.toString(),
         minutos_jugados = minutos_jugados.toString(),
-        imagen = imagen
+        imagen = imagen,
+        tipo = TODO()
     )
 }
 
@@ -255,7 +271,8 @@ fun Entrenador.toDto (): IntegranteDTO {
         goles = null,
         partidos_jugados = null,
         minutos_jugados = null,
-        imagen = imagen
+        imagen = imagen,
+        tipo = TODO()
     )
 }
 /**
@@ -280,7 +297,8 @@ fun Jugador.toDto (): IntegranteDTO {
         goles = goles,
         partidos_jugados = partidos_jugados,
         minutos_jugados = minutos_jugados,
-        imagen = imagen
+        imagen = imagen,
+        tipo = TODO()
     )
 }
 /**
@@ -302,6 +320,10 @@ fun EquipoViewModel.IntegranteState.toJugadorModel(): Integrante {
         goles = this.goles,
         partidos_jugados = this.partidos_jugados,
         minutos_jugados = this.minutos_jugados,
+        id = TODO(),
+        createdAt = TODO(),
+        updatedAt = TODO(),
+        tipo = TODO(),
     )
 }
 /**
@@ -317,5 +339,9 @@ fun EquipoViewModel.IntegranteState.toEntrenadorModel(): Integrante {
         pais = this.pais,
         imagen = this.imagen,
         especialidad = Especialidad.valueOf(this.especialidad),
+        id = TODO(),
+        createdAt = TODO(),
+        updatedAt = TODO(),
+        tipo = TODO(),
     )
 }

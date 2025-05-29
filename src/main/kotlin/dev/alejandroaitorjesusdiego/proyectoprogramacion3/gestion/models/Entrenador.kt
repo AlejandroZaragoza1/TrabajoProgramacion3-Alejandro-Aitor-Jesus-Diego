@@ -1,6 +1,5 @@
 package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
-import dev.alejandroaitorjesusdiego.proyectoprogramacion3.models.Tipo
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -39,6 +38,7 @@ class   Entrenador(
         return "Entrenador(id= $id, nombre= $nombre, apellidos= $apellidos, fecha_nacimiento= $fecha_nacimiento, fecha_incorporacion= $fecha_incorporacion, salario= $salario, pais = $pais, createdAt= $createdAt, updatedAt= $updatedAt, especialidad = $especialidad, imagen = $imagen)"
     }
 
+    val tipo: Any = TODO()
     val rol: String = "Entrenador"
 
     val miEspecialidad = especialidad.toString()

@@ -65,7 +65,8 @@ fun Jugador.copy(
         goles = newGoles,
         partidos_jugados = new_partidos_jugados,
         imagen = new_imagen,
-        minutos_jugados = new_minutos_jugados
+        minutos_jugados = new_minutos_jugados,
+        tipo = TODO()
     )
 }
 /**
@@ -106,6 +107,7 @@ fun Entrenador.copy(
         updatedAt = timeStamp,
         especialidad = newEspecialidad,
         imagen = new_imagen,
+        tipo = TODO(),
     )
 }
 

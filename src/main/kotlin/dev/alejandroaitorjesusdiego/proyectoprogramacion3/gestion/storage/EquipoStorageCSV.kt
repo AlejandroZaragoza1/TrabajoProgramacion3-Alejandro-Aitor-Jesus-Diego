@@ -51,6 +51,7 @@ class EquipoStorageCSV: EquipoStorage {
                     partidos_jugados = it[14].toIntOrNull(),
                     minutos_jugados = it[15].toIntOrNull(),
                     imagen = it[16],
+                    tipo = TODO(),
                 ).toModel()
             } ) // Fin OK
     }

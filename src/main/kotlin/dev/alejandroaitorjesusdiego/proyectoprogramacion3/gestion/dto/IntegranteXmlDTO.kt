@@ -1,4 +1,4 @@
-package org.example.newteam.gestion.dto
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable

@@ -1,4 +1,4 @@
-package dev.alejandroaitorjesusdiego.proyectoprogramacion3.repositories
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.repositories
 
 /**
  * Interfaz que crea los contratos que tendra el CRUD
