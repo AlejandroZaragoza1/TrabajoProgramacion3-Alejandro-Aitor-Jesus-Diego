@@ -1,0 +1,106 @@
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.repositories
+
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dao.IntegranteEntity
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dao.EquipoDAO
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.extensions.copy
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toEntity
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.mapper.toModel
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Entrenador
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Integrante
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models.Jugador
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.validator.IntegranteValidator
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.repositories.EquipoRepository
+import org.lighthousegames.logging.logging
+import java.time.LocalDateTime
+
+/**
+ * Clase que implementa la interfaz [EquipoRepository] para gestionar un equpo de futbol en una base de datos gestionada por el [EquipoDAO] con una serie de [Integrante] que pueden ser [Jugador] o [Entrenador]
+ */
+class EquipoRepositoryImpl(
+    private val dao: EquipoDAO
+): EquipoRepository<Long, Integrante> {
+    private val logger = logging()
+
+
+    /**
+     * Funcion que guarda un [Integrante] en la base de datos
+     * @param entity [Integrante] El integrante que se intenta guardar en el mapa
+     * @return [Integrante]
+     */
+    override fun save(entity: Integrante): Integrante {
+        logger.debug { "Guardando integrante del equipo..." }
+        //Actualizamos los campos createdAt y updatedAt
+        val timestamp = LocalDateTime.now()
+        val integranteToSave=
+            when(entity) {
+                is Jugador -> entity.copy(timeStamp = timestamp).toEntity()
+                is Entrenador -> entity.copy(timeStamp = timestamp).toEntity()
+                else -> null
+            }
+        //Guardamos el vehículo en la base de datos y lo devolvemos como modelo
+        val generatedId = dao.save(integranteToSave!!).toLong()
+        val savedIntegrante = dao.getById(generatedId)!!.toModel()
+        logger.info { "Integrante guardado" }
+        return savedIntegrante
+    }
+
+    /**
+     * Elimina un [Integrante] de la base de datos en base a un ID
+     * @param id [Long] el identificador que representa el objeto que se quiere borrar de la base de datos
+     * @return [Integrante] o nulo si no encuentra el objeto
+     */
+    override fun delete(id: Long): Integrante? {
+        logger.debug { "Borrando integrante del equipo con ID: $id" }
+        val integranteToDelete: Integrante? = dao.getById(id)?.toModel()
+
+        if (integranteToDelete == null) {
+            logger.info { "No se ha encontrado un Integrante con id: $id" }
+            return null
+        }
+        // Si todo sale bien...
+        dao.delete(id)
+        logger.info { "Integrante con ID: $id se ha eliminado correctamente" }
+        return integranteToDelete
+    }
+
+    /**
+     * Funcion que actualiza un integrante en la base de datos
+     *  @param id [Long] El identificador que representa el objeto que se quiere actualizar
+     *  @param entity [Integrante] El integrante que se quiere actualizar
+     * @return [Integrante] o nulo si no encuentra el objeto
+     */
+    override fun update(id: Long, entity: Integrante): Integrante? {
+        logger.debug{"Actualizando integrante del equipo con ID: $id"}
+        val integranteToUpdate: IntegranteEntity? = dao.getById(id)
+        // Comprobamos si es null
+        if (integranteToUpdate == null) {
+            logger.info { "No se ha encontrado un Integrante con id: $id" }
+            return null
+        }
+        // Si todo sale bien...
+        val timestamp = LocalDateTime.now()
+        val integranteUpdated = integranteToUpdate.copy(updatedAt = timestamp).toModel()
+        dao.update(integranteToUpdate)
+        logger.info { "Integrante con ID: $id se ha actualizado correctamente" }
+        return integranteUpdated
+    }
+
+    /**
+     * Obtiene todos los [Integrante] dela base de datos y lo convierte en una [List] de [Integrante]
+     * @return [List] de [Integrante]
+     */
+    override fun getAll(): List<Integrante> {
+        logger.debug { "Obteniendo todos los integrantes" }
+        return dao.getAll().map { it.toModel() }
+    }
+
+    /**
+     * Obtiene un [Integrante] en base a un id de la base de datos
+     * @param id [Long] Identificador que representa el objeto
+     * @return [Integrante] o nulo si no encuentra el objeto
+     */
+    override fun getById(id: Long): Integrante? {
+        logger.debug { "Obteniendo integrante del equipo con ID: $id" }
+        return dao.getById(id)?.toModel()
+    }
+}
