@@ -1,4 +1,4 @@
-package org.example.newteam.gestion.models
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
 /**
  * [Enum] Que identifica la posicion de la que juega un jugador de un equipo y se almacena en el campo [Jugador.posicion]

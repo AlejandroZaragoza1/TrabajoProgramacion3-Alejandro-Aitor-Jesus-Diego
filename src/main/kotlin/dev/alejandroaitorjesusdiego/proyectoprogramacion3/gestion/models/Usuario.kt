@@ -1,4 +1,4 @@
-package org.example.newteam.gestion.models
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
 /**
  * Clase que representa un usuario con nombre y contraseña

@@ -1,4 +1,4 @@
-package dev.alejandroaitorjesusdiego.proyectoprogramacion3.database
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion
 
 import org.jdbi.v3.core.Jdbi
 import org.jdbi.v3.core.kotlin.KotlinPlugin

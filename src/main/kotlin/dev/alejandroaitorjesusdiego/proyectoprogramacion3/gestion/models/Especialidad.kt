@@ -1,4 +1,4 @@
-package org.example.newteam.gestion.models
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
 /**
  * [Enum] Que identifica las especializaciones que puede tener el campo [Entrenador.especialidad]

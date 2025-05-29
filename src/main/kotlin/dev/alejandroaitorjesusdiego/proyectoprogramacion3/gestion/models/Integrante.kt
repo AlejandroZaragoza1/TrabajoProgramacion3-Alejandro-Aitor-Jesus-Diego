@@ -1,6 +1,5 @@
-package org.example.newteam.gestion.models
+package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
-import dev.alejandroaitorjesusdiego.proyectoprogramacion3.models.Tipo
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -17,7 +16,7 @@ import java.time.LocalDateTime
  * @param imagen [String] Imagen de perfil del integrante
  * @property nombreCompleto Campo calculado que fusiona los apellidos y el nombre
  */
-abstract class Integrante (
+abstract class Integrante(
     val id: Long = 0L,
     var nombre: String,
     val apellidos: String,
@@ -25,7 +24,6 @@ abstract class Integrante (
     val fecha_incorporacion: LocalDate, //Localizar
     val salario: Double,
     val pais: String,
-    val tipo: Tipo,
     var createdAt: LocalDateTime = LocalDateTime.now(),
     var updatedAt: LocalDateTime = LocalDateTime.now(),
     var imagen: String = "resources/org/example/newteam/media/profile_picture.png"
