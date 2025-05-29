@@ -1,5 +1,6 @@
 package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.models.Tipo
 import java.time.LocalDate
 import java.time.LocalDateTime
 /**
@@ -34,6 +35,7 @@ class Jugador(
     createdAt: LocalDateTime = LocalDateTime.now(),
     updatedAt: LocalDateTime = LocalDateTime.now(),
     imagen: String,
+    tipo: Tipo,
     val posicion: Posicion,
     val dorsal: Int,
     val altura: Double,
@@ -41,7 +43,7 @@ class Jugador(
     val goles: Int,
     val partidos_jugados: Int,
     val minutos_jugados: Int
-): Integrante(id = id, nombre = nombre, apellidos = apellidos, fecha_nacimiento = fecha_nacimiento, fecha_incorporacion = fecha_incorporacion, salario = salario, pais = pais, createdAt = createdAt,updatedAt = updatedAt, imagen = imagen) {
+): Integrante(id = id, nombre = nombre, apellidos = apellidos, fecha_nacimiento = fecha_nacimiento, fecha_incorporacion = fecha_incorporacion, salario = salario, pais = pais, createdAt = createdAt,updatedAt = updatedAt, imagen = imagen, tipo = tipo) {
     /**
      * Sobreescribe la funcion [toString] predeterminada dandole un formato mas legible
      */
