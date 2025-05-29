@@ -1,9 +1,9 @@
-package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dto
+package org.example.newteam.gestion.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
-
+import java.time.LocalDateTime
 /**
  * Clase Serializable de Integrante
  * @property id Identificador del objeto
@@ -46,6 +46,9 @@ data class IntegranteDTO(
     @SerialName("pais")
     @XmlElement
     val pais: String,
+    @SerialName("Tipo")
+    @XmlElement
+    val tipo: String,
     @SerialName("rol")
     @XmlElement
     val rol: String,

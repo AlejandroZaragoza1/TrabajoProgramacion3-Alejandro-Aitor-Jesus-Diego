@@ -1,5 +1,6 @@
 package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.models
 
+import dev.alejandroaitorjesusdiego.proyectoprogramacion3.models.Tipo
 import java.time.LocalDate
 import java.time.LocalDateTime
 
@@ -17,7 +18,7 @@ import java.time.LocalDateTime
  * @param especialidad [Especialidad] Especializacion del entrenador
  * @property rol [String] Con valor "Entrenador"
  */
-class Entrenador(
+class   Entrenador(
     id: Long = 0L,
     nombre: String,
     apellidos: String,
@@ -28,8 +29,9 @@ class Entrenador(
     createdAt: LocalDateTime = LocalDateTime.now(),
     updatedAt: LocalDateTime = LocalDateTime.now(),
     imagen: String,
+    tipo: Tipo,
     val especialidad: Especialidad
-): Integrante(id = id, nombre = nombre, apellidos = apellidos, fecha_nacimiento = fecha_nacimiento, fecha_incorporacion = fecha_incorporacion, salario = salario, pais = pais, createdAt = createdAt, updatedAt = updatedAt, imagen = imagen) {
+): Integrante(id = id, nombre = nombre, apellidos = apellidos, fecha_nacimiento = fecha_nacimiento, fecha_incorporacion = fecha_incorporacion, salario = salario, pais = pais, createdAt = createdAt, updatedAt = updatedAt, imagen = imagen, tipo = tipo) {
     /**
      * Sobreescribe la funcion [toString] predeterminada dandole un formato mas legible
      */

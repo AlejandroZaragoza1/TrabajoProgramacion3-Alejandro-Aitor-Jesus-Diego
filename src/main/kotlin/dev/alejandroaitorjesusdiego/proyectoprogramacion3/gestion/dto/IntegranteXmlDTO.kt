@@ -1,8 +1,9 @@
-package dev.alejandroaitorjesusdiego.proyectoprogramacion3.gestion.dto
+package org.example.newteam.gestion.dto
 
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 import nl.adaptivity.xmlutil.serialization.XmlElement
+import nl.adaptivity.xmlutil.serialization.XmlValue
 
 /**
  * Clase Serializable de Integrante pensada para un XML
@@ -50,6 +51,9 @@ data class IntegranteXmlDTO(
     @SerialName("pais")
     @XmlElement
     val pais: String,
+    @SerialName("Tipo")
+    @XmlElement
+    val tipo: String,
     @SerialName("especialidad")
     @XmlElement
     val especialidad: String?,
@@ -64,7 +68,7 @@ data class IntegranteXmlDTO(
     val altura: String?,
     @SerialName("peso")
     @XmlElement
-    val peso: String?,
+    val peso:String?,
     @SerialName("goles")
     @XmlElement
     val goles: String?,

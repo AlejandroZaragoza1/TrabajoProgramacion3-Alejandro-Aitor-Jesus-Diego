@@ -16,7 +16,7 @@ import java.time.LocalDateTime
  * @param imagen [String] Imagen de perfil del integrante
  * @property nombreCompleto Campo calculado que fusiona los apellidos y el nombre
  */
-abstract class Integrante (
+abstract class Integrante(
     val id: Long = 0L,
     var nombre: String,
     val apellidos: String,
